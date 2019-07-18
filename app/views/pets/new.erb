@@ -1,2 +1,24 @@
 <h1>Create a new Pet</h1>
 
+<form action="/pets" method="post">
+<label>New Pet Name:</label>
+<br>
+<input type="text" name="pet[name]" id="pet_name">
+<input type="submit" value="Create Pet">
+<br>
+<p>Select an owner or create a new one</p>
+
+<h3>Existing owners</h3>
+<% @owners.each do |o|%>
+<input type="checkbox" name="pet[owner_ids][]" id="<%= o.id %>" value="<%= o.id %>"><%= o.name %>
+<% end %>
+<br>
+
+</form>
+
+<!-- The form to create a new pet should allow a user to select 
+     from the list of available owners and/or create a new owner. 
+     
+     The form to edit a given pet should allow the user to 
+     select an owner or create a new owner.
+-->

@@ -1,1 +1,7 @@
-index.erb
+<% @owners.each do |o| %>
+  <div>
+  <ul>
+    <li><%= o.name %></li>
+  </ul>
+  </div>
+<% end %>
